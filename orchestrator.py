@@ -10,6 +10,7 @@ def trigger_workflow(repo, workflow, token, ref="main"):
     url = f"https://api.github.com/repos/{repo}/actions/workflows/{workflow}/dispatches"
     headers = {"Authorization": f"Bearer {token}"}
     data = {"ref": ref}
+    print(f"Triggering workflow {workflow} in {repo} with ref {ref}... and using token {token} and url {url}")
     response = requests.post(url, headers=headers, json=data)
 
     if response.status_code == 204:
