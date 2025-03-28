@@ -1,5 +1,4 @@
 {
-  "github_token": "${{ env.GITHUB_TOKEN }}",
   "workflows": [
     {
       "repo": "onboarding-examples-sonarqube/python-example",

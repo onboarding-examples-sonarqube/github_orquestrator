@@ -25,5 +25,5 @@ jobs:
 
       - name: Run orchestrator script
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python orchestrator.py --config ${{ github.event.inputs.config_file }}
+          GITHUB_TOKEN: ${{ secrets.ORCHESTRATOR_TOKEN }}
+        run: python orchestrator.py --config ${{ github.event.inputs.config_file }} --token ${{ secrets.ORCHESTRATOR_TOKEN }}

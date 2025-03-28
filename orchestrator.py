@@ -20,11 +20,11 @@ def trigger_workflow(repo, workflow, token, ref="main"):
     else:
         print(f"Failed to trigger workflow {workflow} in {repo}: {response.status_code} - {response.text}")
 
-def main(config_path):
+def main(config_path, github_token):
     with open(config_path, "r") as f:
         config = json.load(f)
 
-    token = config.get("github_token")
+    token = github_token
     if not token:
         print("Error: 'github_token' is missing in the configuration file.")
         return
@@ -35,5 +35,6 @@ def main(config_path):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="GitHub Actions Orchestrator")
     parser.add_argument("--config", required=True, help="Path to the configuration file")
+    parser.add_argument("--token", required=True, help="GitHub token for authentication")
     args = parser.parse_args()
-    main(args.config)
+    main(args.config, args.token)
