@@ -24,7 +24,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Check directory contents
-        run: ls -la ./github_orchestrator
+        run: pwd
 
       - name: Run orchestrator script
         run: python ./github_orchestrator/orchestrator.py --config ${{ github.event.inputs.config_file }}
