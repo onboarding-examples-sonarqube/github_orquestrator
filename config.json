@@ -1,5 +1,5 @@
 {
-  "github_token": "${{ secrets.GITHUB_TOKEN }}",
+  "github_token": "${{ secrets.ORCHESTRATOR_TOKEN }}",
   "workflows": [
     {
       "repo": "onboarding-examples-sonarqube/python-example",
