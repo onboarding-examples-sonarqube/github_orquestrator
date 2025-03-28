@@ -8,7 +8,27 @@
     {
       "repo": "onboarding-examples-sonarqube/sonar-scanner-cli-example",
       "workflow": "sonarqube-server.yml",
-      "ref": "develop"
+      "ref": "main"
+    },
+    {
+      "repo": "onboarding-examples-sonarqube/gradle-example",
+      "workflow": "sonarqube-server.yml",
+      "ref": "main"
+    },
+    {
+      "repo": "onboarding-examples-sonarqube/maven-example",
+      "workflow": "sonarqube-server.yml",
+      "ref": "main"
+    },
+    {
+      "repo": "onboarding-examples-sonarqube/dotnet-example",
+      "workflow": "sonarqube-server.yml",
+      "ref": "main"
+    },
+    {
+      "repo": "onboarding-examples-sonarqube/python-vulnerable-example",
+      "workflow": "sonarqube-server.yml",
+      "ref": "main"
     }
   ]
 }
