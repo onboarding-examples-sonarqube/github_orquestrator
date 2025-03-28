@@ -24,4 +24,6 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run orchestrator script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python orchestrator.py --config ${{ github.event.inputs.config_file }}
