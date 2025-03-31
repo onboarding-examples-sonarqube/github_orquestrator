@@ -1,31 +1,44 @@
 {
   "workflows": [
     {
+      "type": "azure",
+      "organization": "onboarding-examples",
+      "project": "python-example",
+      "pipeline_id": 7,
+      "branch": "main"
+    },
+    {
+      "type": "github",
       "repo": "onboarding-examples-sonarqube/python-example",
       "workflow": "sonarqube-server.yml",
       "ref": "main"
     },
     {
+      "type": "github",
       "repo": "onboarding-examples-sonarqube/sonar-scanner-cli-example",
       "workflow": "sonarqube-server.yml",
       "ref": "main"
     },
     {
+      "type": "github",
       "repo": "onboarding-examples-sonarqube/gradle-example",
       "workflow": "sonarqube-server.yml",
       "ref": "main"
     },
     {
+      "type": "github",
       "repo": "onboarding-examples-sonarqube/maven-example",
       "workflow": "sonarqube-server.yml",
       "ref": "main"
     },
     {
+      "type": "github",
       "repo": "onboarding-examples-sonarqube/dotnet-example",
       "workflow": "sonarqube-server.yml",
       "ref": "main"
     },
     {
+      "type": "github",
       "repo": "onboarding-examples-sonarqube/python-vulnerable-example",
       "workflow": "sonarqube-server.yml",
       "ref": "main"
