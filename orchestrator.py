@@ -56,6 +56,10 @@ def main(config_path, github_token, azure_token):
         config = json.load(f)
 
     for item in config.get("workflows", []):
+        if not item.get("enabled", True):  # Skip if the workflow is disabled
+            print(f"Skipping disabled workflow for {item.get('repo', item.get('project'))}.")
+            continue
+
         if item.get("type") == "github":
             if not github_token:
                 print(f"Skipping GitHub workflow for {item['repo']} due to missing GitHub token.")
