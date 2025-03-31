@@ -1,6 +1,7 @@
 import json
 import requests
 import argparse
+import base64  # Import base64 for encoding the Azure token
 
 def trigger_workflow(repo, workflow, token, ref="main"):
     if not token:
@@ -20,14 +21,19 @@ def trigger_workflow(repo, workflow, token, ref="main"):
     else:
         print(f"Failed to trigger workflow {workflow} in {repo}: {response.status_code} - {response.text}")
 
+def encode_azure_token(token):
+    """Encodes the Azure DevOps token in Base64 format."""
+    return base64.b64encode(f":{token}".encode("utf-8")).decode("utf-8")
+
 def trigger_azure_pipeline(organization, project, pipeline_id, token, branch="main"):
     if not token:
         print("Error: Azure DevOps token is missing or invalid.")
         return
 
+    encoded_token = encode_azure_token(token)  # Encode the token
     url = f"https://dev.azure.com/{organization}/{project}/_apis/pipelines/{pipeline_id}/runs?api-version=6.0-preview.1"
     headers = {
-        "Authorization": f"Basic {token}",
+        "Authorization": f"Basic {encoded_token}",  # Use the encoded token
         "Content-Type": "application/json"
     }
     data = {"resources": {"repositories": {"self": {"refName": f"refs/heads/{branch}"}}}}
