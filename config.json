@@ -8,6 +8,34 @@
       "branch": "main"
     },
     {
+      "type": "azure",
+      "organization": "onboarding-examples",
+      "project": "maven-example",
+      "pipeline_id": 3,
+      "branch": "main"
+    },
+    {
+      "type": "azure",
+      "organization": "onboarding-examples",
+      "project": "gradle-example",
+      "pipeline_id": 1,
+      "branch": "main"
+    },
+    {
+      "type": "azure",
+      "organization": "onboarding-examples",
+      "project": "dotnet-example",
+      "pipeline_id": 13,
+      "branch": "main"
+    },
+    {
+      "type": "azure",
+      "organization": "onboarding-examples",
+      "project": "sonar-scanner-cli-example",
+      "pipeline_id": 8,
+      "branch": "main"
+    },
+    {
       "type": "github",
       "repo": "onboarding-examples-sonarqube/python-example",
       "workflow": "sonarqube-server.yml",
