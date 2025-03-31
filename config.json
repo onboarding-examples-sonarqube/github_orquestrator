@@ -1,34 +1,86 @@
 {
   "workflows": [
     {
+      "type": "azure",
+      "organization": "onboarding-examples",
+      "project": "python-example",
+      "pipeline_id": 7,
+      "branch": "main",
+      "enabled": true
+    },
+    {
+      "type": "azure",
+      "organization": "onboarding-examples",
+      "project": "maven-example",
+      "pipeline_id": 3,
+      "branch": "main",
+      "enabled": false
+    },
+    {
+      "type": "azure",
+      "organization": "onboarding-examples",
+      "project": "gradle-example",
+      "pipeline_id": 1,
+      "branch": "main",
+      "enabled": true
+    },
+    {
+      "type": "azure",
+      "organization": "onboarding-examples",
+      "project": "dotnet-example",
+      "pipeline_id": 13,
+      "branch": "main",
+      "enabled": false
+    },
+    {
+      "type": "azure",
+      "organization": "onboarding-examples",
+      "project": "sonar-scanner-cli-example",
+      "pipeline_id": 8,
+      "branch": "main",
+      "enabled": true
+    },
+    {
+      "type": "github",
       "repo": "onboarding-examples-sonarqube/python-example",
       "workflow": "sonarqube-server.yml",
-      "ref": "main"
+      "ref": "main",
+      "enabled": true
     },
     {
+      "type": "github",
       "repo": "onboarding-examples-sonarqube/sonar-scanner-cli-example",
       "workflow": "sonarqube-server.yml",
-      "ref": "main"
+      "ref": "main",
+      "enabled": false
     },
     {
+      "type": "github",
       "repo": "onboarding-examples-sonarqube/gradle-example",
       "workflow": "sonarqube-server.yml",
-      "ref": "main"
+      "ref": "main",
+      "enabled": true
     },
     {
+      "type": "github",
       "repo": "onboarding-examples-sonarqube/maven-example",
       "workflow": "sonarqube-server.yml",
-      "ref": "main"
+      "ref": "main",
+      "enabled": false
     },
     {
+      "type": "github",
       "repo": "onboarding-examples-sonarqube/dotnet-example",
       "workflow": "sonarqube-server.yml",
-      "ref": "main"
+      "ref": "main",
+      "enabled": true
     },
     {
+      "type": "github",
       "repo": "onboarding-examples-sonarqube/python-vulnerable-example",
       "workflow": "sonarqube-server.yml",
-      "ref": "main"
+      "ref": "main",
+      "enabled": false
     }
   ]
 }
