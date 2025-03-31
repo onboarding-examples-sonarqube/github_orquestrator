@@ -11,7 +11,6 @@ def trigger_workflow(repo, workflow, token, ref="main"):
     url = f"https://api.github.com/repos/{repo}/actions/workflows/{workflow}/dispatches"
     headers = {"Authorization": f"Bearer {token}"}
     data = {"ref": ref}
-    print(f"Triggering workflow {workflow} in {repo} with ref {ref}... and using token {token} and url {url}")
     response = requests.post(url, headers=headers, json=data)
 
     if response.status_code == 204:
@@ -37,7 +36,6 @@ def trigger_azure_pipeline(organization, project, pipeline_id, token, branch="ma
         "Content-Type": "application/json"
     }
     data = {"resources": {"repositories": {"self": {"refName": f"refs/heads/{branch}"}}}}
-    print(f"Triggering Azure DevOps pipeline {pipeline_id} in {organization}/{project} on branch {branch}...")
     response = requests.post(url, headers=headers, json=data)
 
     if response.status_code == 200:
