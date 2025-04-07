@@ -14,7 +14,7 @@
       "project": "maven-example",
       "pipeline_id": 3,
       "branch": "main",
-      "enabled": false
+      "enabled": true
     },
     {
       "type": "azure",
@@ -30,7 +30,7 @@
       "project": "dotnet-example",
       "pipeline_id": 13,
       "branch": "main",
-      "enabled": false
+      "enabled": true
     },
     {
       "type": "azure",
@@ -52,7 +52,7 @@
       "repo": "onboarding-examples-sonarqube/sonar-scanner-cli-example",
       "workflow": "sonarqube-server.yml",
       "ref": "main",
-      "enabled": false
+      "enabled": true
     },
     {
       "type": "github",
@@ -66,7 +66,7 @@
       "repo": "onboarding-examples-sonarqube/maven-example",
       "workflow": "sonarqube-server.yml",
       "ref": "main",
-      "enabled": false
+      "enabled": true
     },
     {
       "type": "github",
@@ -80,7 +80,7 @@
       "repo": "onboarding-examples-sonarqube/python-vulnerable-example",
       "workflow": "sonarqube-server.yml",
       "ref": "main",
-      "enabled": false
+      "enabled": true
     }
   ]
 }
