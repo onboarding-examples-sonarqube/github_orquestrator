@@ -139,7 +139,7 @@ def wait_for_azure_pipeline(organization, project, run_id, token, timeout=3600, 
         return False
         
     encoded_token = encode_azure_token(token)
-    url = f"https://dev.azure.com/{organization}/{project}/_apis/pipelines/runs/{run_id}?api-version=6.0-preview.1"
+    url = f"https://dev.azure.com/{organization}/{project}/_apis/build/runs/{run_id}?api-version=6.0-preview.1"
     headers = {
         "Authorization": f"Basic {encoded_token}",
         "Content-Type": "application/json"
