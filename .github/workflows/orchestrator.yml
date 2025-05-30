@@ -24,4 +24,4 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run orchestrator script
-        run: python orchestrator.py --config ${{ github.event.inputs.config_file }} --github-token ${{ secrets.ORCHESTRATOR_TOKEN }} --azure-token ${{ secrets.AZURE_ORCHESTRATOR_TOKEN }}
+        run: python orchestrator.py --config ${{ github.event.inputs.config_file }} --github-token ${{ secrets.ORCHESTRATOR_TOKEN }} --azure-token ${{ secrets.AZURE_ORCHESTRATOR_TOKEN }} --continue-on-error
