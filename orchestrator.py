@@ -139,7 +139,7 @@ def wait_for_azure_pipeline(organization, project, run_id, token, timeout=3600, 
         return False
         
     encoded_token = encode_azure_token(token)
-    url = f"https://dev.azure.com/{organization}/{project}/_apis/build/status/{run_id}?api-version=6.0-preview.1"
+    url = f"https://dev.azure.com/{organization}/{project}/_apis/build/builds/{run_id}?api-version=7.1"
     headers = {
         "Authorization": f"Basic {encoded_token}",
         "Content-Type": "application/json"
@@ -159,23 +159,23 @@ def wait_for_azure_pipeline(organization, project, run_id, token, timeout=3600, 
         
         if response.status_code == 200:
             run_data = response.json()
-            state = run_data.get("state")
+            status = run_data.get("status")
             result = run_data.get("result")
             
             # Get pipeline name if available
-            name = run_data.get("name", f"Pipeline {run_id}")
+            definition_name = run_data.get("definition", {}).get("name", f"Pipeline {run_id}")
             
-            print(f"[STATUS] Azure DevOps pipeline {name} in {organization}/{project} state: {state}, result: {result}")
+            print(f"[STATUS] Azure DevOps pipeline {definition_name} in {organization}/{project} status: {status}, result: {result}")
             
-            if state == "completed":
+            if status == "completed":
                 if result == "succeeded":
-                    print(f"[SUCCESS] Azure DevOps pipeline {name} in {organization}/{project} completed successfully after {elapsed_time} seconds.")
+                    print(f"[SUCCESS] Azure DevOps pipeline {definition_name} in {organization}/{project} completed successfully after {elapsed_time} seconds.")
                     return True
                 else:
-                    print(f"[FAILED] Azure DevOps pipeline {name} in {organization}/{project} completed with result: {result} after {elapsed_time} seconds.")
+                    print(f"[FAILED] Azure DevOps pipeline {definition_name} in {organization}/{project} completed with result: {result} after {elapsed_time} seconds.")
                     return False
             else:
-                print(f"[WAITING] Azure DevOps pipeline {name} is still running (state: {state}), waiting {check_interval} seconds...")
+                print(f"[WAITING] Azure DevOps pipeline {definition_name} is still running (status: {status}), waiting {check_interval} seconds...")
         else:
             print(f"[ERROR] Failed to get status for pipeline run {run_id}: {response.status_code} - {response.text}")
         
