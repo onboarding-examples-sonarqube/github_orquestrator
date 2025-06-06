@@ -14,7 +14,7 @@
       "project": "maven-example",
       "pipeline_id": 3,
       "branch": "main",
-      "enabled": true
+      "enabled": false
     },
     {
       "type": "azure",
@@ -22,7 +22,7 @@
       "project": "gradle-example",
       "pipeline_id": 1,
       "branch": "main",
-      "enabled": true
+      "enabled": false
     },
     {
       "type": "azure",
@@ -30,7 +30,7 @@
       "project": "dotnet-example",
       "pipeline_id": 13,
       "branch": "main",
-      "enabled": true
+      "enabled": false
     },
     {
       "type": "azure",
@@ -38,7 +38,7 @@
       "project": "sonar-scanner-cli-example",
       "pipeline_id": 8,
       "branch": "main",
-      "enabled": true
+      "enabled": false
     },
     {
       "type": "github",
@@ -52,28 +52,28 @@
       "repo": "onboarding-examples-sonarqube/sonar-scanner-cli-example",
       "workflow": "sonarqube-server.yml",
       "ref": "main",
-      "enabled": true
+      "enabled": false
     },
     {
       "type": "github",
       "repo": "onboarding-examples-sonarqube/gradle-example",
       "workflow": "sonarqube-server.yml",
       "ref": "main",
-      "enabled": true
+      "enabled": false
     },
     {
       "type": "github",
       "repo": "onboarding-examples-sonarqube/maven-example",
       "workflow": "sonarqube-server.yml",
       "ref": "main",
-      "enabled": true
+      "enabled": false
     },
     {
       "type": "github",
       "repo": "onboarding-examples-sonarqube/dotnet-example",
       "workflow": "sonarqube-server.yml",
       "ref": "main",
-      "enabled": true
+      "enabled": false
     },
     {
       "type": "github",
