@@ -1,0 +1,46 @@
+{
+  "workflows": [
+    {
+      "type": "github",
+      "repo": "onboarding-examples-sonarqube/python-example",
+      "workflow": "sonarqube-server.yml",
+      "ref": "main",
+      "enabled": true
+    },
+    {
+      "type": "github",
+      "repo": "onboarding-examples-sonarqube/sonar-scanner-cli-example",
+      "workflow": "sonarqube-server.yml",
+      "ref": "main",
+      "enabled": true
+    },
+    {
+      "type": "github",
+      "repo": "onboarding-examples-sonarqube/gradle-example",
+      "workflow": "sonarqube-server.yml",
+      "ref": "main",
+      "enabled": true
+    },
+    {
+      "type": "github",
+      "repo": "onboarding-examples-sonarqube/maven-example",
+      "workflow": "sonarqube-server.yml",
+      "ref": "main",
+      "enabled": true
+    },
+    {
+      "type": "github",
+      "repo": "onboarding-examples-sonarqube/dotnet-example",
+      "workflow": "sonarqube-server.yml",
+      "ref": "main",
+      "enabled": true
+    },
+    {
+      "type": "github",
+      "repo": "onboarding-examples-sonarqube/python-vulnerable-example",
+      "workflow": "sonarqube-server.yml",
+      "ref": "main",
+      "enabled": true
+    }
+  ]
+}
